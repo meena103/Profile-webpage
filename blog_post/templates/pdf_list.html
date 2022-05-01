@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="starter-template">
+    {% for pdf in pdfs %}
+        <div class="panel">
+            <div class="panel-heading">
+                <h3><a href = "{{pdf.pdf.url}}">{{ pdf.name }}</h3>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

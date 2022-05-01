@@ -1,0 +1,323 @@
+{% load static %}
+{% load socialaccount %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>IIT JODHPUR</title>
+
+    <link rel="stylesheet" href="{% static "PJ03.css" %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">.
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"></script>
+
+    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}"/> {% endcomment %}
+
+</head>
+<body>
+    <nav id="navbar">
+        <div id="first">
+            <img src="{% static "img/logo12.jpg" %}" alt="">
+        </div>
+
+        <div id="middle">
+            <!-- <ul>
+                <nav class="cl-effect-5">
+               <li><a class="active" href="index.html"><span data-hover="Home">home</span></a></li>
+
+
+               </nav>
+            </ul> -->
+            <ul>
+                <li><a id="aa" href="/">Home</a></li>
+                <li><a id="aa" href="#section-one">about</a></li>
+                <li><a id="aa" href="#section-three" >Publications</a></li>
+                <li><a id="aa" href="#section-four" >Courses</a></li>
+                <li><a id="aa" href="#section-five" >Achivements</a></li>
+                {% comment %} <li><a id="aa" href="/register">Registration</a></li>
+                <li><a id="aa" href="#/home">HOME</a></li>
+                <li><a id="aa" href="#/home">HOME</a></li> {% endcomment %}
+                {% if not user.is_authenticated %}
+                    <li class="active"><a  id="aa" href="/accounts/social/signup/ ">Registration</a></li>
+                    <li class="active"><a  id="aa" href="/accounts/google/login/?process=login/">Login</a></li>
+
+                {% endif %}
+                {% if user.is_authenticated %}
+                    <li class="active"><a  id="aa" href="/logout">Logout</a></li>
+                {% endif %}
+                <!-- <li><a href="#about">ABOUT</a></li>
+                <li><a href="#work">WORK</a></li>
+                <li><a href="#services">SERVICE</a></li>
+                <li><a href="#contact">CONTACT</a></li> -->
+            </ul>
+        </div>
+
+        {% comment %} <div id="right">
+            <div class="right-a">
+                <a href="#"><img src="./img/interneticon.png" alt=""></a>
+            </div>
+            <div class="right-b">
+                <div class="right-b-a">
+                    <img src="./img/Humburger.png" alt="">
+                </div>
+                <div class="right-b-b">
+                    <img src="./profileicon.png" alt="">
+                </div>
+
+            </div>
+        </div> {% endcomment %}
+    </nav>
+
+
+
+    <section id="section-two">
+        <div id="mainbox">
+            <div class="imgbox">
+                <h1>INDIAN INSTITUE OF TECHNOLOGY JODHPUR</h1>
+                <!-- <h3>Plan a diffrent kind of getaway to uncover the hidden gems near you.</h3>
+                <h4>Explore nearby</h4> -->
+            </div>
+        </div>
+    </section>
+
+    <section id="section-one">
+        <div id="sirbox">
+            <div class="sirbox1">
+                <img src="{% static "img/pi01.jpg" %}" alt="">
+            </div>
+            <div class="sirbox2">
+                <h1>DR. ARANI ALI KHAN</h1>
+                <p>Arani Ali Khan is a Assistant Professor at Indian Institute of Technology, Jodhpur. He completed his PhD from Indian Institute of Technology Kharagpur in 2018. He was also formerly worked in MTRDC, DRDO as research associate and RF engineer in Amphenol omni-connect.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="section-three">
+        <h1>PUBLICATIONS</h1>
+        <P>Research Paper and articals published by Dr. Arani Ali Khan</P>
+        <div id="c-box">
+            <div class="cbox">
+                <div class="image31">
+                    <img src="{% static "img/IEEE-removebg-preview.png "%}" id="img31" alt="">
+                </div>
+                <div class="textbox">
+                    <a href="https://ieeexplore.ieee.org/document/9118727"><h2>Research Paper</h2></a>
+                    <p>Mode De-coupling of a Dual Mode SIW Resonator and Its Application in Designing a Self-Diplexing Radiator</p>
+                </div>
+            </div>
+            <div class="cbox">
+                <div class="image31">
+                    <img src="{% static "img/IEEE-removebg-preview.png "%}" id="img31" alt="">
+                </div>
+                <div class="textbox">
+                    <a href="https://ieeexplore.ieee.org/document/8600367"><h2>Research Paper</h2></a>
+                    <p>Compact Self-Diplexing Antenna Using Dual-Mode SIW Square Cavity</p>
+                </div>
+            </div>
+            <div class="cbox">
+                <div class="image31">
+                    <img src="{% static "img/IEEE-removebg-preview.png "%}" id="img31" alt="">
+                </div>
+                <div class="textbox">
+                    <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8340025"><h2>Research Paper</h2></a>
+                    <p>Narrowband Substrate Integrated Waveguide Bandpass Filter with High Selectivity</p>
+                </div>
+            </div>
+            <div class="cbox">
+                <div class="image31">
+                    <img src="{% static "img/IEEE-removebg-preview.png "%}" id="img31" alt="">
+                </div>
+                <div class="textbox">
+                    <a href="https://ieeexplore.ieee.org/document/7931334"><h2>Research Paper</h2></a>
+                    <p>Dual-band substrate integrated waveguide filter with independently controllable bandwidth</p>
+                </div>
+            </div>
+            <div class="cbox">
+                <div class="image31">
+                    <img src="{% static "img/IEEE-removebg-preview.png "%}" id="img31" alt="">
+                </div>
+                <div class="textbox">
+                    <a href="https://ieeexplore.ieee.org/document/7509147"><h2>Research Paper</h2></a>
+                    <p>A comparative study on substrate integrated waveguide periodic leaky wave antennas with differently shaped periodic slots</p>
+                </div>
+            </div>
+            <div class="cbox">
+                <div class="image31">
+                    <img src="{% static "img/IEEE-removebg-preview.png "%}" id="img31" alt="">
+                </div>
+                <div class="textbox">
+                    <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7592906"><h2>Research Paper</h2></a>
+                    <p>Miniaturized Substrate Integrated Waveguide (SIW) Power Dividers</p>
+                </div>
+            </div>
+            <div class="cbox">
+                <div class="image31">
+                    <img src="{% static "img/IEEE-removebg-preview.png "%}" id="img31" alt="">
+                </div>
+                <div class="textbox">
+                    <a href="https://ieeexplore.ieee.org/document/7707345"><h2>Research Paper</h2></a>
+                    <p>A Compact Broadband Direct Coaxial Line to SIW Transition</p>
+                </div>
+            </div>
+            <div class="cbox">
+                <div class="image31">
+                    <img src="{% static "img/IEEE-removebg-preview.png "%}" id="img31" alt="">
+                </div>
+                <div class="textbox">
+                    <a href="https://ieeexplore.ieee.org/document/7411379"><h2>Research Paper</h2></a>
+                    <p>A compact and wideband SMA connector to empty substrate integrated waveguide (ESIW) transition</p>
+                </div>
+            </div>
+            <div class="cbox">
+                <div class="image31">
+                    <img src="{% static "img/IEEE-removebg-preview.png "%}" id="img31" alt="">
+                </div>
+                <div class="textbox">
+                    <a href="https://ieeexplore.ieee.org/document/7408750"><h2>Research Paper</h2></a>
+                    <p>Dual-beam substrate integrated waveguide periodic leaky-wave antenna</p>
+                </div>
+            </div>
+            <div class="cbox">
+                <div class="image31">
+                    <img src="{% static "img/IEEE-removebg-preview.png "%}" id="img31" alt="">
+                </div>
+                <div class="textbox">
+                    <a href="hhttps://ieeexplore.ieee.org/document/7408702"><h2>Research Paper</h2></a>
+                    <p>Dual-mode bandpass filter using via less substrate integrated waveguide technology</p>
+                </div>
+            </div>
+            <div class="cbox">
+                <div class="image31">
+                    <img src="%{% static "img/logo1.webp" %}" id="img31" alt="">
+                </div>
+                <div class="textbox">
+                    <a href="https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/iet-map.2016.0692"><h2>Research Article</h2></a>
+                    <p>Design of planar diplexers with improved isolation using the tunable transmission zeros of a dual-mode cavity filter</p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+
+    <section id="section-four">
+        <h1>COURSES</h1>
+        <P>Courses taught by arani ali khan</P>
+
+        <div id="d-box">
+            <div class="dbox">
+               <a href = "couse/EEL1010/"> <h2>INTRODUCTION INTO ELECTRIC ENGINEERING</h2></a>
+                <div class="textbox2">
+                    <p>The goal of this course is for you (an absolute beginner) to learn all the fundamentals of
+                        Electrical Engineering in the most simple, effective and fast way.</p>
+                </div>
+            </div>
+            <div class="dbox">
+                <h2>MILIMETER WAVE TECHNOLOGY</h2>
+                <div class="textbox2">
+                    <p>Millimeter wave components are usually realized by frequency scaling the microwave components.
+                        However, an engineer has to deal with several design challenges in terms of higher loss, high
+                        signal-to-noise ratio, signal distortions etc.
+                    </p>
+                </div>
+            </div>
+            <div class="dbox">
+                <a href = "couse/CT/"> <h2>CURCUIT THEORY</h2></a>
+                <div class="textbox2">
+                    <p>Circuit Theory is the most fundamental course in electrical engineering. what is covered In this
+                        course is a complete introduction to what electric circuits are, from the simplest one of the to
+                        some of the most complex circuits.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div id="d-box">
+            <div class="dbox">
+                <h2>RF INTEGRATED CIRCUIT DESGIN</h2>
+                <div class="textbox2">
+                    <p>The course covers the topics on how to derive the RF wireless systems specifications, and how to
+                        design the main building blocks of a transceiver, i.e., low noise amplifier, power amplifier.
+                    </p>
+                </div>
+            </div>
+            <div class="dbox">
+                <h2>RADAR ENGINEERING</h2>
+                <div class="textbox2">
+                    <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+                </div>
+            </div>
+            <div class="dbox">
+                <h2>MICROWAVE ENGINEERING</h2>
+                <div class="textbox2">
+                    <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="section-five">
+        <div class="contacter">
+            <div class="hd5">
+                <h1>ACHIVEMENTS</h1>
+            </div>
+            <div class="par5">
+                <p>ACHIVEMENT 1</p> <br>
+                <p>ACHIVEMENT 2</p> <br>
+                <p>ACHIVEMENT 3</p> <br>
+                <p>ACHIVEMENT 4</p> <br>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+
+            <!-- Logged user info -->
+            {% if user.is_authenticated %}
+                <p class="text-center">
+                    | Logged user: {{ user.username }}
+                    | Email: {{ user.email }}
+                    | Admin:{{ user.is_superuser }}
+                    | <a href="{% url 'logout' %}">Sign Out</a>
+                </p>
+            {% endif %}
+
+
+
+        </div>
+    </div>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</div>
+
+
+
+
+</body>
+
+</html>

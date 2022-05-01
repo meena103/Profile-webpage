@@ -1,0 +1,104 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>IIT JODHPUR</title>
+
+    <link rel="stylesheet" href="{% static "PJ03.css" %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">.
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"></script>
+
+    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}"/> {% endcomment %}
+
+</head>
+<body>
+    <nav id="navbar">
+        <div id="first">
+            <img src="{% static "img/logo12.jpg" %}" alt="">
+        </div>
+
+        <div id="middle">
+            <!-- <ul>
+                <nav class="cl-effect-5">
+               <li><a class="active" href="index.html"><span data-hover="Home">home</span></a></li>
+               <li><a href="#about" class="scroll"><span data-hover="about">about</span></a></li>
+               <li><a href="#work" class="scroll"><span data-hover="work"><span>work</span></a></li>
+               <li><a href="#services" class="scroll"><span data-hover="services">services</span></a></li>
+               <li><a href="#contact" class="scroll"><span data-hover="contact">contact</span></a></li>
+               </nav>
+            </ul> -->
+            <ul>
+                <li><a id="aa" href="/">HOME</a></li>
+                {% comment %} <li><a id="aa" href="/register">Registration</a></li>
+                <li><a id="aa" href="#/home">HOME</a></li>
+                <li><a id="aa" href="#/home">HOME</a></li> {% endcomment %}
+                {% if not user.is_authenticated %}
+                    <li class="active"><a  id="aa" href="/accounts/social/signup/ ">Registration</a></li>
+                    <li class="active"><a  id="aa" href="/accounts/google/login/?process=login/">Login</a></li>
+
+                {% endif %}
+                {% if user.is_authenticated %}
+                    <li class="active"><a  id="aa" href="/logout">Logout</a></li>
+                {% endif %}
+                <!-- <li><a href="#about">ABOUT</a></li>
+                <li><a href="#work">WORK</a></li>
+                <li><a href="#services">SERVICE</a></li>
+                <li><a href="#contact">CONTACT</a></li> -->
+            </ul>
+        </div>
+
+        {% comment %} <div id="right">
+            <div class="right-a">
+                <a href="#"><img src="./img/interneticon.png" alt=""></a>
+            </div>
+            <div class="right-b">
+                <div class="right-b-a">
+                    <img src="./img/Humburger.png" alt="">
+                </div>
+                <div class="right-b-b">
+                    <img src="./profileicon.png" alt="">
+                </div>
+
+            </div>
+        </div> {% endcomment %}
+    </nav>
+
+<div id="content">
+    {% block content %}{% endblock %}
+</div>
+
+<hr>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+
+            {% if user.is_authenticated %}
+                <p class="text-center">
+                    | Logged user: {{ user.username }}
+                    | Email: {{ user.email }}
+                    | Admin:{{ user.is_superuser }}
+                    | <a href="{% url 'logout' %}">Sign Out</a>
+                </p>
+            {% endif %}
+
+
+
+        </div>
+    </div>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</div>
+
+</body>
+</html>
