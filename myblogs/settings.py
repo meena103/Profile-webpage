@@ -17,7 +17,6 @@ import django_heroku
 ...
 # All of your settings here
 ...
-django_heroku.settings(locals())
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -104,6 +103,7 @@ DATABASES = {
     }
 }
 
+django_heroku.settings(locals())
 
 
 # Password validation
