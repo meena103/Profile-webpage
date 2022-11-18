@@ -39,14 +39,7 @@
                 {% comment %} <li><a id="aa" href="/register">Registration</a></li>
                 <li><a id="aa" href="#/home">HOME</a></li>
                 <li><a id="aa" href="#/home">HOME</a></li> {% endcomment %}
-                {% if not user.is_authenticated %}
-                    <li class="active"><a  id="aa" href="/accounts/social/signup/ ">Registration</a></li>
-                    <li class="active"><a  id="aa" href="/accounts/google/login/?process=login/">Login</a></li>
-
-                {% endif %}
-                {% if user.is_authenticated %}
-                    <li class="active"><a  id="aa" href="/logout">Logout</a></li>
-                {% endif %}
+  
                 <!-- <li><a href="#about">ABOUT</a></li>
                 <li><a href="#work">WORK</a></li>
                 <li><a href="#services">SERVICE</a></li>
